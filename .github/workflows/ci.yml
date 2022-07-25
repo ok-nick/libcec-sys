@@ -117,8 +117,8 @@ jobs:
               uses: actions/checkout@v2
             - name: Checkout libcec-sys submodules
               run: git -c "url.https://github.com/.insteadOf=git@github.com:" submodule update --init --recursive
-            - name: Apt-get update
-              run: sudo apt-get update -yq
+            # - name: Apt-get update
+            #   run: sudo apt-get update -yq
             - name: Installing Rust toolchain
               uses: actions-rs/toolchain@v1
               with:
