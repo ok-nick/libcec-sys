@@ -187,7 +187,7 @@ fn compile_vendored() {
             })
             .arg("2019")
             .arg(dst.join(LIBCEC_BUILD))
-            .arg("nmake")
+            .arg("vs")
             .status()
             .expect("failed to build libcec!");
         println!(
