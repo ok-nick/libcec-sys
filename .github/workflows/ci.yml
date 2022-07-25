@@ -22,7 +22,7 @@ jobs:
                       libcec: vendored-libcec
                       expected_libcec_abi: 6
                     - os: windows-latest
-                      target: i686-windows-msvc
+                      target: i686-pc-windows-msvc
                       use-cross: false
                       libcec: vendored-libcec
                       expected_libcec_abi: 6
