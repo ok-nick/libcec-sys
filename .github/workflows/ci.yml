@@ -16,12 +16,12 @@ jobs:
             matrix:
                 rust: [stable]
                 job:
-                    - os: windows-latest
+                    - os: windows-2022
                       target: x86_64-pc-windows-msvc
                       use-cross: false
                       libcec: vendored-libcec
                       expected_libcec_abi: 6
-                    - os: windows-latest
+                    - os: windows-2022
                       target: i686-pc-windows-msvc
                       use-cross: false
                       libcec: vendored-libcec
