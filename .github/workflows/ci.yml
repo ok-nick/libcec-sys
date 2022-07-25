@@ -159,6 +159,7 @@ jobs:
             - if: ${{ !startsWith(matrix.job.libcec, 'vendored') && !matrix.job.pkg-config }}
               name: Remove pkg-config
               run: sudo apt-get remove -yq pkg-config
+            - uses: ilammy/msvc-dev-cmd@v1
             - name: Cargo test
               env:
                   EXPECTED_LIBCEC_VERSION_MAJOR: ${{ matrix.job.expected_libcec_abi }}
