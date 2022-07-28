@@ -165,7 +165,7 @@ jobs:
               name: Remove pkg-config
               run: sudo apt-get remove -yq pkg-config
             # install python with debug binaries for Windows since it is not installed by default
-            - if: runner.os == "Windows"
+            - if: runner.os == 'Windows'
               name: Install python 3.10.5 with debug binaries
               run: |
                   curl -o python-3.10.5-amd64.exe https://www.python.org/ftp/python/3.10.5/python-3.10.5-amd64.exe
