@@ -1,7 +1,7 @@
 on:
     push:
         branches:
-            - testt
+            - master
     pull_request:
         branches:
             - master
@@ -181,5 +181,10 @@ jobs:
                   ;'
             - name: Rustfmt check
               run: cargo fmt -- --check
-            - name: Clippy check
-              run: cargo clippy
+            # need to use cross to setup dependencies
+            - name: Clippy Check
+              uses: actions-rs/cargo@v1
+              with:
+                  use-cross: true
+                  command: clippy
+                  args: -- --target x86_64-unknown-linux-gnu -D warnings
