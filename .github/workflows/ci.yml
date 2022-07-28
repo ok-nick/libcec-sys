@@ -180,6 +180,6 @@ jobs:
                   git submodule update --init \
                   ;'
             - name: Rustfmt check
-              uses: cargo fmt -- --check
+              run: cargo fmt -- --check
             - name: Clippy check
               run: cargo clippy
