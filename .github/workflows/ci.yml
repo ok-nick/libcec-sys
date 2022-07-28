@@ -168,10 +168,8 @@ jobs:
             - if: runner.os == 'Windows'
               name: Install python 3.10.5 with debug binaries
               run: |
-                  $name = ${{ runner.arch == 'X86' }} ? "" : "-amd64"
-                  $name
-                  curl -o python-3.10.5$name.exe https://www.python.org/ftp/python/3.10.5/python-3.10.5$name.exe
-                  Start-Process -FilePath "python-3.10.5$name.exe" -ArgumentList "/quiet Include_debug=1 PrependPath=1 InstallAllUsers=0" -Verb runas -Wait
+                  curl -o python-3.10.5-amd64.exe https://www.python.org/ftp/python/3.10.5/python-3.10.5-amd64.exe
+                  Start-Process -FilePath "python-3.10.5-amd64.exe" -ArgumentList "/quiet Include_debug=1 PrependPath=1 InstallAllUsers=0" -Verb runas -Wait
             - name: Cargo test
               env:
                   EXPECTED_LIBCEC_VERSION_MAJOR: ${{ matrix.job.expected_libcec_abi }}
